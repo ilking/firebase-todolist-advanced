@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { db } from '../admin/admin';
+import { db } from '../../admin/admin';
 
 export const createTodo = async (request: Request, response: Response) => {
   if (request.body.body.trim() === '') {

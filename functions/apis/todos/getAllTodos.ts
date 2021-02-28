@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { db } from '../admin/admin';
+import { db } from '../../admin/admin';
 import { TodoItem } from './index';
 
 export const getAllTodos = async (request: Request, response: Response) => {

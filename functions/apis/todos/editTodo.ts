@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { TodoItem } from '.';
-import { db } from '../admin/admin';
+import { db } from '../../admin/admin';
 
 export const editTodo = async (request: Request, response: Response) => {
   if (request.body.todoId || request.body.createdAt) {
