@@ -1,0 +1,30 @@
+# @baseUrl = https://us-central1-tstodolist-6c8c0.cloudfunctions.net/api
+@baseUrl = http://localhost:5000/tstodolist-6c8c0/us-central1/api
+
+
+###
+
+GET {{baseUrl}}/todos
+
+###
+
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "Submitted",
+  "body": "This is a test"
+}
+
+###
+
+DELETE {{baseUrl}}/todo/SFnTngX2M3dh7rnY20LN
+
+###
+
+PUT {{baseUrl}}/todo/todos
+Content-Type: application/json
+
+{
+  "body": "This is the new body"
+}
