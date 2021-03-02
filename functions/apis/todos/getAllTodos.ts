@@ -3,7 +3,11 @@ import { db } from '../../admin/admin';
 import { TodoItem } from './index';
 
 export const getAllTodos = async (request: Request, response: Response) => {
-  const todoDocs = await db.collection('todos').orderBy('createdAt', 'desc').get();
+  const todoDocs = await db
+    .collection('todos')
+    .where('username', '==', request.body.user.username)
+    .orderBy('createdAt', 'desc')
+    .get();
 
   const todos = todoDocs.docs.reduce((allTodos: TodoItem[], doc) => {
     allTodos.push({

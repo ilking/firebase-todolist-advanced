@@ -19,5 +19,7 @@ module.exports = {
     'max-len': [1, 130, 2],
     'object-curly-spacing': ['warn', 'always'],
     'no-unused-vars': ['warn'],
+    'prefer-const': ['warn'],
+    'arrow-parens': ['warn', 'as-needed'],
   },
 };

@@ -10,7 +10,12 @@ export const createTodo = async (request: Request, response: Response) => {
     return response.status(400).json({ title: 'Must not be empty' });
   }
 
-  const newItem = { title: request.body.title, body: request.body.body, createdAt: new Date().toISOString() };
+  const newItem = {
+    title: request.body.title,
+    body: request.body.body,
+    createdAt: new Date().toISOString(),
+    username: request.body.user.username,
+  };
 
   try {
     const { id } = await db.collection('todos').add(newItem);

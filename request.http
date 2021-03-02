@@ -1,19 +1,23 @@
 # @baseUrl = https://us-central1-tstodolist-6c8c0.cloudfunctions.net/api
 @baseUrl = http://localhost:5000/tstodolist-6c8c0/us-central1/api
-
+@token = eyJhbGciOiJSUzI1NiIsImtpZCI6ImM0ZWFhZjkxM2VlNWY0MDY0YmE2NjUzN2M0Njk3YzY5OGE3NGYwODIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vdHN0b2RvbGlzdC02YzhjMCIsImF1ZCI6InRzdG9kb2xpc3QtNmM4YzAiLCJhdXRoX3RpbWUiOjE2MTQ2NjY3NTIsInVzZXJfaWQiOiJuN1UxMklISDN2UU40bEpDRFBGN2pZZlBkOHAxIiwic3ViIjoibjdVMTJJSEgzdlFONGxKQ0RQRjdqWWZQZDhwMSIsImlhdCI6MTYxNDY2Njc1MiwiZXhwIjoxNjE0NjcwMzUyLCJlbWFpbCI6Imlhbi5raW5nQGhkYS1pbnN0aXR1dGUuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImlhbi5raW5nQGhkYS1pbnN0aXR1dGUuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.ZAp5MVXOaDHaeL69IV38sJd779CS8dzhytNqZSl2ZCOlNvR5rTFBx5vMWWcDsUj3pXqZobRJJUkDelVDnyhEPHz8YwKIfVPB2110zWDI4NJuaDA6HPDKgmu4X2nr7Zw_njyx0WpFLDlQV-13imVdrZXIXVW0YYlSHoyPw4qOm4X2hPYMzlODg3js08KO4LEeble3VXDTht7eR_xIA_iluNu1TsfdujHGu-3-eLKny9b_VKP7ZhilBoeKTUxB8U72wmP0KqNd-30CddIq9Qiqqjo-F0jd2qclatCfU9emBn_aVi4iiEKS6Ak_JgsgBL8Yhe22mTFtU0GMbVPUMhc7rg
 
 ###
 
 GET {{baseUrl}}/todos
+Authorization: Bearer {{token}}
+
 
 ###
 
 POST {{baseUrl}}/todos
 Content-Type: application/json
+Authorization: Bearer {{token}}
+
 
 {
   "title": "Submitted",
-  "body": "This is a test"
+  "body": "This is a test by evil"
 }
 
 ###
@@ -27,4 +31,30 @@ Content-Type: application/json
 
 {
   "body": "This is the new body"
+}
+
+###
+
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{ 
+  "email": "king.ian.ilk@gmail.com",
+  "password": "asdfgh12@A"
+}
+
+###
+
+POST {{baseUrl}}/signup
+Content-Type: application/json
+
+{
+   "firstName": "Ian",
+   "lastName": "Evil",
+   "email":"ian.king@hda-institute.com",
+   "phoneNumber": "4434252319",
+   "country": "USA",
+   "password": "asdfgh12@A",
+   "confirmPassword": "asdfgh12@A",
+   "username": "evilopportunist"
 }
